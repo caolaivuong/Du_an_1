@@ -14,7 +14,7 @@
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
-                <h1>Create account</h1>
+                <h1>create account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
@@ -25,12 +25,12 @@
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
-                <button>Sign Up</button>
+                <button>sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form>
-                <h1>Sign In</h1>
+                <h1>sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
