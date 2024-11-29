@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Liên Hệ</title>
+    <title>Tin Tức Mới - Cửa Hàng Quần Áo</title>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -34,113 +34,116 @@
         margin-bottom: 30px;
     }
 
-    .contact-info {
-        display: flex;
-        justify-content: space-between;
+    .news-item {
         background-color: #fff;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
         border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .contact-info div {
-        flex: 1;
-        margin: 0 10px;
+    .news-item img {
+        width: 40%;
+        /* Adjust width for images */
+        max-width: 300px;
+        /* Limit max width */
+        height: auto;
+        border-radius: 8px;
     }
 
-    .contact-info h3 {
+    .news-item .content {
+        width: 55%;
+        /* Adjust width for text */
+        padding-left: 20px;
+    }
+
+    .news-item h3 {
         font-size: 22px;
         color: #2c3e50;
         margin-bottom: 10px;
     }
 
-    .contact-info p {
+    .news-item p {
         font-size: 16px;
         color: #555;
         line-height: 1.6;
     }
 
-    form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
+    .news-item .date {
+        font-size: 14px;
+        color: #777;
+        margin-top: 10px;
     }
 
-    form label {
-        font-size: 16px;
-        color: #2c3e50;
+    .news-item .read-more {
+        color: #e67e22;
+        text-decoration: none;
         font-weight: bold;
     }
 
-    form input,
-    form textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    form button {
-        padding: 12px 20px;
-        background-color: #e67e22;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    form button:hover {
-        background-color: #d35400;
+    .news-item .read-more:hover {
+        text-decoration: underline;
     }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Liên Hệ Với Chúng Tôi</h1>
+        <h1>Tin Tức Cập Nhật</h1>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Thông Tin Liên Hệ</h2>
+        <h2 class="section-title">Các Tin Tức Mới Nhất</h2>
 
-        <div class="contact-info">
-            <div>
-                <h3>Địa Chỉ</h3>
-                <p>Đường Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
-                <h3>Email</h3>
-                <p>nhom3@gmail.com</p>
-            </div>
-            <div>
-                <h3>Số Điện Thoại</h3>
-                <p>0372135015</p>
-                <h3>Giờ Làm Việc</h3>
-                <p>Thứ 2 - Thứ 6: 7:00 AM - 22:00 PM</p>
-                <p>Thứ 7 - Chủ Nhật: 9:00 AM - 1:00 PM</p>
+        <!-- News Item 1 -->
+        <div class="news-item">
+            <img src="https://wego.net.vn/wp-content/uploads/2022/02/don-dau-nhung-mau-ao-dong-phuc-polo-dep-gay-bao-thumb.png"
+                alt="Bộ Sưu Tập Mùa Thu 2024">
+            <div class="content">
+                <h3>Khám Phá Bộ Sưu Tập Mùa Thu 2024</h3>
+                <p>
+                    Bộ sưu tập mới nhất của chúng tôi mang đến sự kết hợp hoàn hảo giữa phong cách cổ điển và hiện đại,
+                    với các chất liệu vải cao cấp. Những mẫu thiết kế mới này sẽ là lựa chọn lý tưởng cho mọi dịp lễ hội
+                    và công sở.
+                </p>
+                <p class="date">Ngày đăng: 29/11/2024</p>
+                <a href="#" class="read-more">Đọc thêm</a>
             </div>
         </div>
 
-        <h2 class="section-title">Gửi Thông Tin Liên Hệ</h2>
+        <!-- News Item 2 -->
+        <div class="news-item">
+            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:840:0/q:90/plain/https://cellphones.com.vn/media/wysiwyg/khuyen-mai-giang-sinh-1.jpg"
+                alt="Giảm Giá Mùa Giáng Sinh">
+            <div class="content">
+                <h3>Giảm Giá Mùa Giáng Sinh - Lên Đến 50%</h3>
+                <p>
+                    Mừng mùa lễ hội, cửa hàng của chúng tôi có các chương trình giảm giá lớn cho tất cả các sản phẩm từ
+                    áo polo, quần jeans, đến phụ kiện thời trang. Đừng bỏ lỡ cơ hội tuyệt vời này!
+                </p>
+                <p class="date">Ngày đăng: 28/11/2024</p>
+                <a href="#" class="read-more">Đọc thêm</a>
+            </div>
+        </div>
 
-        <form action="mailto:info@brand.com" method="post" enctype="text/plain">
-            <label for="name">Họ và Tên:</label>
-            <input type="text" id="name" name="name" required>
+        <!-- News Item 3 -->
+        <div class="news-item">
+            <img src="https://giamgiatructuyen.com/wp-content/uploads/2019/10/meo-mua-hang-mien-phi-ship-shopee-5.jpg"
+                alt="Giao Hàng Miễn Phí">
+            <div class="content">
+                <h3>Chính Sách Giao Hàng Miễn Phí Cho Đơn Hàng Trên 500.000 VNĐ</h3>
+                <p>
+                    Chúng tôi cung cấp dịch vụ giao hàng miễn phí cho tất cả các đơn hàng từ 500.000 VNĐ trở lên. Chỉ
+                    cần mua sắm thoải mái và để chúng tôi lo phần giao hàng cho bạn!
+                </p>
+                <p class="date">Ngày đăng: 27/11/2024</p>
+                <a href="#" class="read-more">Đọc thêm</a>
+            </div>
+        </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Số Điện Thoại:</label>
-            <input type="tel" id="phone" name="phone">
-
-            <label for="message">Tin Nhắn:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Gửi Thông Tin</button>
-        </form>
     </div>
 </body>
 
