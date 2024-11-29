@@ -11,10 +11,10 @@
                             <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                             <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
-                        <div class="text-center">Hoặc đăng ký qua</div>
+                        <div class="text-center">hoặc đăng ký qua</div>
                         <div class="row justify-content-center">
                             <div class="col-4">
-                                <label class="form-label">Username:</label>
+                                <label class="form-label">username:</label>
                                 <input type="text" name="user"
                                     class="form-control ct-input border border-primary-subtle" placeholder="Username">
                                 <div class="text-danger">
