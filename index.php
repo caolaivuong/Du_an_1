@@ -174,7 +174,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "view/taikhoan/edit_taikhoan.php";
             break;
-       case 'addtocart':
+      case 'addtocart':
     if (!isset($_SESSION['user'])) {  // Kiểm tra nếu chưa đăng nhập
         header('Location: index.php?act=dangnhap');  // Chuyển hướng đến trang đăng nhập
         exit;
@@ -185,34 +185,75 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         $name = $_POST['name'];
         $img = $_POST['img'];
         $price = $_POST['price'];
-        if (isset($_SESSION['mycart'][$id]['soluong']) && $_SESSION['mycart'][$id]['soluong'] > 0) {
-            $soluong = $_SESSION['mycart'][$id]['soluong'];
-        } else {
-            $soluong = 1;
-        }
-        $thanhtien = $soluong * $price;
-        
-        $sp = [
-            "name" => $name,
-            "img" => $img,
-            "price" => $price,
-            "soluong" => $soluong,
-            "id" => $id
-        ];
+        $soluong = isset($_POST['soluong']) ? $_POST['soluong'] : 1; // Lấy số lượng từ form, mặc định là 1 nếu không có
 
-        $_SESSION['mycart'][$id] = $sp;
+        // Kiểm tra nếu sản phẩm đã có trong giỏ, thì tăng số lượng lên
+        if (isset($_SESSION['mycart'][$id])) {
+            $_SESSION['mycart'][$id]['soluong'] += $soluong;  // Tăng số lượng của sản phẩm trong giỏ
+        } else {
+            // Nếu chưa có, tạo mới sản phẩm trong giỏ
+            $sp = [
+                "name" => $name,
+                "img" => $img,
+                "price" => $price,
+                "soluong" => $soluong,
+                "id" => $id
+            ];
+            $_SESSION['mycart'][$id] = $sp;  // Thêm sản phẩm vào giỏ
+        }
     }
-    include "view/cart/viewcart.php";
+    include "view/cart/viewcart.php";  // Hiển thị giỏ hàng
     break;
 
-        case 'delcart':
-            if (isset($_GET['idcart'])) {
-                array_splice($_SESSION['mycart'], $_GET['idcart'], 1);
-            } else {
-                $_SESSION['mycart'] = [];
+case 'updatecart':
+    if (isset($_GET['id']) && isset($_POST['action'])) {
+        $id = $_GET['id'];
+        $action = $_POST['action'];
+
+        // Kiểm tra nếu sản phẩm tồn tại trong giỏ hàng
+        if (isset($_SESSION['mycart'][$id])) {
+            $soluong = $_SESSION['mycart'][$id]['soluong'];
+
+            // Tăng số lượng nếu người dùng nhấn nút "increase"
+            if ($action == 'increase') {
+                $_SESSION['mycart'][$id]['soluong'] = $soluong + 1;
             }
-            header('Location: index.php?act=viewcart');
-            break;
+
+            // Giảm số lượng nếu người dùng nhấn nút "decrease", đảm bảo số lượng không nhỏ hơn 1
+            elseif ($action == 'decrease' && $soluong > 1) {
+                $_SESSION['mycart'][$id]['soluong'] = $soluong - 1;
+            }
+        }
+    }
+
+    // Xử lý thay đổi size
+    if (isset($_GET['id']) && isset($_POST['size'])) {
+        $id = $_GET['id'];
+        $size = $_POST['size'];
+
+        // Cập nhật size trong giỏ hàng
+        if (isset($_SESSION['mycart'][$id])) {
+            $_SESSION['mycart'][$id]['size'] = $size;
+        }
+    }
+
+    // Sau khi cập nhật, bạn sẽ hiển thị lại giỏ hàng
+    include "view/cart/viewcart.php";  // Hiển thị lại giỏ hàng sau khi cập nhật
+    break;
+
+case 'delcart':
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        // Kiểm tra xem sản phẩm có tồn tại trong giỏ hàng hay không
+        if (isset($_SESSION['mycart'][$id])) {
+            unset($_SESSION['mycart'][$id]);  // Xóa sản phẩm khỏi giỏ hàng
+        }
+    }
+    // Sau khi xóa, hiển thị lại giỏ hàng
+    include "view/cart/viewcart.php";  // Hiển thị lại giỏ hàng sau khi xóa
+    break;
+
         case 'viewcart':
             include "view/cart/viewcart.php";
             break;

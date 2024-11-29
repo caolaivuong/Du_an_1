@@ -195,14 +195,14 @@ body {
                         Sản Phẩm
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=12">Áo
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=22">Áo
                                 Phông</a>
                         </li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=9">Áo Polo</a>
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=21">Áo Polo</a>
                         </li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=13">Quần
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=19">Quần
                                 jeans</a></li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=10">Váy Nữ</a>
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=20">Váy Nữ</a>
                         </li>
                     </ul>
                 </li>

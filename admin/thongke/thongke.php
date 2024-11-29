@@ -12,7 +12,8 @@
     <tbody>
         <?php
             foreach($listthongke as $thongke){
-                extract($tk);
+                // Dùng extract để truy xuất các giá trị trong mảng $thongke
+                extract($thongke);
                 echo '<tr>
                         <td>'.$madm.'</td>
                         <td>'.$tendm.'</td>
