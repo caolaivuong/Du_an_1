@@ -12,10 +12,10 @@
                             <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                             <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
-                        <div class="text-center">Hoặc sử dụng tài khoản đã đăng ký</div>
+                        <div class="text-center">hoặc sử dụng tài khoản đã đăng ký</div>
                         <div class="row justify-content-center">
                             <div class="col-4">
-                                <label class="form-label">Username:</label>
+                                <label class="form-label">username:</label>
                                 <input type="text" name="user"
                                     class="form-control ct-input border border-primary-subtle" placeholder="Username">
                                 <div class="text-danger">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-4">
-                                <label class="form-label">Password:</label>
+                                <label class="form-label">password:</label>
                                 <input type="password" name="pass"
                                     class="form-control ct-input border border-primary-subtle" placeholder="Password">
                                 <div class="text-danger">
