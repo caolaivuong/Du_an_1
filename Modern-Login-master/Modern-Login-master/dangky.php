@@ -28,7 +28,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-4 ">
-                                <label class="form-label">Email:</label>
+                                <label class="form-label">Email 1:</label>
                                 <input type="email" name="email"
                                     class="form-control ct-input border border-primary-subtle " placeholder="Email">
                                 <div class="text-danger">
