@@ -156,7 +156,7 @@
 
         <div class="footer-bottom">
             <div class="footer-column">
-                <h3 style="margin-left: 50px;">popular Fashion</h3>
+                <h3 style="margin-left: 50px;">Popular Fashion</h3>
                 <p style="margin-left: 50px;">Địa chỉ: Trịnh Văn Bô_Nam Từ Liêm_Hà Nội</p>
                 <p style="margin-left: 50px;">SDT(1):0372135015</p>
                 <p style="margin-left: 50px;">SDT(2):0372567890</p>
@@ -166,7 +166,7 @@
                 <ul>
                     <li><a href="?act=gioithieu">Giới thiệu</a></li>
                     <li><a href="?act=tintuc">Tin tức</a></li>
-                    <li><a href="#">với cộng đồng</a></li>
+                    <li><a href="#">Với cộng đồng</a></li>
                     <li><a href="#">Hệ thống cửa hàng</a></li>
                 </ul>
             </div>

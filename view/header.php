@@ -198,11 +198,11 @@ body {
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=12">Áo
                                 Phông</a>
                         </li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=9">Áo polo</a>
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=9">Áo Polo</a>
                         </li>
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=13">Quần
                                 jeans</a></li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=10">Váy nữ</a>
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=10">Váy Nữ</a>
                         </li>
                     </ul>
                 </li>

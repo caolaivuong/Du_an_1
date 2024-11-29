@@ -140,8 +140,8 @@ a {
             <img src="https://trungbac247.vn/data/media/2209/images/IconBottom_GiaohangMP.png" alt="Miễn phí vận chuyển"
                 class="service-icon">
             <div class="service-text">
-                <h4>miễn phí vận chuyển</h4>
-                <p>ddơn hàng trên 500K</p>
+                <h4>Miễn phí vận chuyển</h4>
+                <p>Đơn hàng trên 500K</p>
             </div>
         </div>
         <div class="service-item">
