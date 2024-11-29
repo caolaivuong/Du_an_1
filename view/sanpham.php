@@ -154,8 +154,8 @@
         <div class="items">
             <select id="filterSelect" aria-label="Disabled select example" onchange="redirectToLink()">
                 <option selected value="0">Sản phẩm....</option>
-                <option value="1">Áo Phông</option>
-                <option value="2">Áo Polo</option>
+                <option value="1">Áo phông</option>
+                <option value="2">Áo polo</option>
                 <option value="3">Quần jeans</option>
                 <option value="4">Váy Nữ</option>
                 <option value="5">Combo</option>

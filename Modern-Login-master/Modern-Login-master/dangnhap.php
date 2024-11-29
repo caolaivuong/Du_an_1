@@ -54,7 +54,7 @@
                         </h2>
                         <div class="row justify-content-center">
                             <div class="col-10">
-                                <h1 class="text-center">Chưa có tài khoản 1? Đăng ký ngay!</h1>
+                                <h1 class="text-center">Chưa có tài khoản ? Đăng ký ngay!</h1>
                             </div>
                             <div class="col-4 text-center">
                                 <p>Hãy dăng ký để được truy cập đầy đủ chức năng</p>
