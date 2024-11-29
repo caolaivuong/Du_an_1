@@ -156,7 +156,7 @@ a {
             <img src="https://png.pngtree.com/png-clipart/20230923/original/pngtree-flat-gift-card-icon-with-discount-coupon-and-bonus-certificate-vector-png-image_12538242.png"
                 alt="Phiếu tặng quà" class="service-icon">
             <div class="service-text">
-                <h4>Phiếu tặng quà</h4>
+                <h4>phiếu tặng quà</h4>
                 <p>Đơn hàng từ 1000K</p>
             </div>
         </div>

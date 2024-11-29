@@ -187,7 +187,7 @@ body {
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark-emphasis" href="index.php?act=gioithieu">Giới Thiệu</a>
+                    <a class="nav-link text-dark-emphasis" href="index.php?act=gioithieu">giới Thiệu</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-dark-emphasis" href="#" role="button"

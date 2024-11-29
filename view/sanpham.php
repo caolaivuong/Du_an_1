@@ -143,8 +143,8 @@
     <div class="service-item">
         <img src="https://decuubaoquan.com/files/news/ho-tro-24-7-kifgxte9.jpg" alt="Hỗ trợ 24/7" class="service-icon">
         <div class="service-text">
-            <h4>Hỗ trợ 24/7</h4>
-            <p>Sẵn sàng hỗ trợ</p>
+            <h4>hỗ trợ 24/7</h4>
+            <p>sẵn sàng hỗ trợ</p>
         </div>
     </div>
 </div>

@@ -130,7 +130,7 @@
         <!-- Giới thiệu về thương hiệu -->
         <section class="brand-info">
             <div class="text">
-                <h2 class="section-title">Về Chúng Tôi</h2>
+                <h2 class="section-title">về Chúng Tôi</h2>
                 <p>Popular là một thương hiệu quần áo nổi bật với thiết kế thời trang, hiện đại, và chất lượng vượt
                     trội. Từ những chiếc
                     áo thun đơn giản đến những bộ sưu tập cao cấp, chúng tôi cam kết mang đến cho khách hàng những sản
