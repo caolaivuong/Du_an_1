@@ -54,10 +54,10 @@
                         </h2>
                         <div class="row justify-content-center">
                             <div class="col-10">
-                                <h1 class="text-center">chưa có tài khoản ? Đăng ký ngay!</h1>
+                                <h1 class="text-center">Chưa có tài khoản ? Đăng ký ngay!</h1>
                             </div>
                             <div class="col-4 text-center">
-                                <p>hãy dăng ký để được truy cập đầy đủ chức năng</p>
+                                <p>Hãy dăng ký để được truy cập đầy đủ chức năng</p>
                                 <a href="index.php?act=dangky" class=" btn btn-success ">Đăng ký</a>
                             </div>
                         </div>
