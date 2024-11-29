@@ -3,7 +3,8 @@
         <div class="  mb">
             <div class="form-container sign-in">
                 <div class="container">
-                    <form class="form-control" method="post" action="index.php?act=dangnhap" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>>
+                    <form class="form-control" method="post" action="index.php?act=dangnhap"
+                        <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>>
                         <h1 class="text-center">ĐĂNG NHẬP</h1>
                         <div class="social-icons text-center">
                             <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -16,7 +17,7 @@
                             <div class="col-4">
                                 <label class="form-label">Username:</label>
                                 <input type="text" name="user"
-                                    class="form-control ct-input border border-primary-subtle" placeholder="Username" >
+                                    class="form-control ct-input border border-primary-subtle" placeholder="Username">
                                 <div class="text-danger">
                                     <?php
                                     if (isset ($userErr) && ($userErr) != "") {
@@ -42,7 +43,7 @@
                         </div>
                         <div class="text-center">
 
-                            <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-info mt-2">
+                            <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-success mt-2">
                         </div>
                         <h2 class="text-center text-danger m-2">
                             <?php
@@ -57,7 +58,7 @@
                             </div>
                             <div class="col-4 text-center">
                                 <p>Hãy dăng ký để được truy cập đầy đủ chức năng</p>
-                                <a href="index.php?act=dangky" class=" btn btn-info ">Đăng ký</a>
+                                <a href="index.php?act=dangky" class=" btn btn-success ">Đăng ký</a>
                             </div>
                         </div>
                         <?php

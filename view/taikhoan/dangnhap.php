@@ -22,8 +22,8 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-info mt-2">
-                            <a href="index.php?act=dangky" class="btn btn-info mt-2">Đăng ký</a>
+                            <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-success mt-2">
+                            <a href="index.php?act=dangky" class="btn btn-success mt-2">Đăng ký</a>
                         </div>
                     </form>
 
