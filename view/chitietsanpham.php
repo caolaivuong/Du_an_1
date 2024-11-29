@@ -1,42 +1,42 @@
 <style>
-    td {
-        padding: 0 20px;
-    }
+td {
+    padding: 0 20px;
+}
 
-    .size-button {
-        padding: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
+.size-button {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 
-    .selected {
-        background-color: yellow;
-    }
+.selected {
+    background-color: yellow;
+}
 
-    .quantity-container {
-        display: flex;
-        align-items: center;
-    }
+.quantity-container {
+    display: flex;
+    align-items: center;
+}
 
-    .quantity-btn {
-        background-color: #f1f1f1;
-        border: none;
-        padding: 8px 12px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-    .quantity-value {
-        margin: 0 10px;
-        font-size: 16px;
-    }
+.quantity-value {
+    margin: 0 10px;
+    font-size: 16px;
+}
 </style>
 <main class="container ">
     <input type="hidden" name="" value="">
     <div class="text-center">
         <?php extract($sanpham); ?>
         <h3 class="badge text-bg-success text-wrap" style="width: 12rem;">
-            Chi tiết sản phẩm
+            chi tiết sản phẩm
 
         </h3>
     </div><br>
@@ -84,11 +84,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+    $(document).ready(function() {
 
-            $("#binhluan").load("view/binhluan/binhluanform.php", { idpro: <?= $id ?> });
-
+        $("#binhluan").load("view/binhluan/binhluanform.php", {
+            idpro: <?= $id ?>
         });
+
+    });
     </script>
     <div class="" id="binhluan">
         <form action="">
@@ -114,72 +116,71 @@
     ?>
 
 </main>
-<script src="/jquery-3.4.1.min.js" ></script>
+<script src="/jquery-3.4.1.min.js"></script>
 <script>
-    var selectedSize = '';
+var selectedSize = '';
 
-    function setSize(size) {
-        if (selectedSize !== '') {
-            var prevSizeElement = document.getElementById('size-' + selectedSize);
-            prevSizeElement.classList.remove('selected');
-        }
-
-        selectedSize = size;
-        document.getElementById('selected-size').textContent = size;
-
-        var currentSizeElement = document.getElementById('size-' + selectedSize);
-        currentSizeElement.classList.add('selected');
-    }
-    function plus(x) {
-        var cha = x;
-        var slcu = cha.previousSibling.previousSibling;
-        var slmoi = parseInt(slcu.value) + 1;
-        var idsp = cha.nextSibling.nextSibling.value;
-        if (slmoi < 11) {
-            slcu.value = slmoi;
-            $.post("/model/capnhatctsp.php",
-                {
-                    "idsp": idsp,
-                    "slmoi": slmoi,
-                },
-                function (data, textStatus, jqXHR) {
-                    console.log(data);
-                    document.getElementById("ctsp").innerHTML = data;
-                },
-            ).fail(function (jqXHR, textStatus, errorThrown) {
-                // Error callback function
-                console.log("AJAX request failed:", errorThrown);
-                // Perform error handling actions here, such as displaying an error message to the user
-            });
-        } else {
-            alert("Không thể lớn hơn 10")
-        }
-
-    }
-    function minus(x) {
-        var cha = x;
-        var slcu = cha.nextSibling.nextSibling;
-        var slmoi = parseInt(slcu.value) - 1;
-        var idsp = cha.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.value;
-        if (slmoi > 0) {
-            slcu.value = slmoi;
-            $.post("//model/capnhatctsp.php",
-                {
-                    "idsp": idsp,
-                    "slmoi": slmoi,
-                },
-                function (data, textStatus, jqXHR) {
-                    console.log(data);
-                    document.getElementById("ctsp").innerHTML = data;
-                },
-            ).fail(function (jqXHR, textStatus, errorThrown) {
-                // Error callback function
-                console.log("AJAX request failed:", errorThrown);
-                // Perform error handling actions here, such as displaying an error message to the user
-            });
-        } else {
-            alert("Không thể nhỏ hơn 1")
-        }
+function setSize(size) {
+    if (selectedSize !== '') {
+        var prevSizeElement = document.getElementById('size-' + selectedSize);
+        prevSizeElement.classList.remove('selected');
     }
 
+    selectedSize = size;
+    document.getElementById('selected-size').textContent = size;
+
+    var currentSizeElement = document.getElementById('size-' + selectedSize);
+    currentSizeElement.classList.add('selected');
+}
+
+function plus(x) {
+    var cha = x;
+    var slcu = cha.previousSibling.previousSibling;
+    var slmoi = parseInt(slcu.value) + 1;
+    var idsp = cha.nextSibling.nextSibling.value;
+    if (slmoi < 11) {
+        slcu.value = slmoi;
+        $.post("/model/capnhatctsp.php", {
+                "idsp": idsp,
+                "slmoi": slmoi,
+            },
+            function(data, textStatus, jqXHR) {
+                console.log(data);
+                document.getElementById("ctsp").innerHTML = data;
+            },
+        ).fail(function(jqXHR, textStatus, errorThrown) {
+            // Error callback function
+            console.log("AJAX request failed:", errorThrown);
+            // Perform error handling actions here, such as displaying an error message to the user
+        });
+    } else {
+        alert("Không thể lớn hơn 10")
+    }
+
+}
+
+function minus(x) {
+    var cha = x;
+    var slcu = cha.nextSibling.nextSibling;
+    var slmoi = parseInt(slcu.value) - 1;
+    var idsp = cha.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.value;
+    if (slmoi > 0) {
+        slcu.value = slmoi;
+        $.post("//model/capnhatctsp.php", {
+                "idsp": idsp,
+                "slmoi": slmoi,
+            },
+            function(data, textStatus, jqXHR) {
+                console.log(data);
+                document.getElementById("ctsp").innerHTML = data;
+            },
+        ).fail(function(jqXHR, textStatus, errorThrown) {
+            // Error callback function
+            console.log("AJAX request failed:", errorThrown);
+            // Perform error handling actions here, such as displaying an error message to the user
+        });
+    } else {
+        alert("Không thể nhỏ hơn 1")
+    }
+}
 </script>

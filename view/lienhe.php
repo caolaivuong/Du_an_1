@@ -134,7 +134,7 @@
         <!-- Form liên hệ -->
         <h2 class="section-title">Gửi Thông Tin Liên Hệ</h2>
         <form action="mailto:info@brand.com" method="post" enctype="text/plain">
-            <label for="name">Họ và Tên:</label>
+            <label for="name">họ và Tên:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">Email:</label>
@@ -146,7 +146,7 @@
             <label for="message">Tin Nhắn:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Gửi Thông Tin</button>
+            <button type="submit">gửi Thông Tin</button>
         </form>
 
     </div>

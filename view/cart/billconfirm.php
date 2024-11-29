@@ -10,7 +10,7 @@
             <div class="box_title"></div>
             <div class="box_content">
                 <center>
-                    <h2>Cảm ơn quý khách đã đặt hàng!</h2>
+                    <h2>cảm ơn quý khách đã đặt hàng!</h2>
                 </center>
             </div>
         </div>
@@ -38,31 +38,31 @@
                     <span class="badge text-bg-success ">THÔNG TIN ĐẶT HÀNG</span>
                     <div class="box_content container ">
                         <table class="table table-hover text-center">
-                                <tr>
-                                    <td>Tên khách hàng</td>
-                                    <td>
-                                        <?= $bill['bill_user']; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Địa chỉ</td>
-                                    <td>
-                                        <?= $bill['bill_address']; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>
-                                        <?= $bill['bill_email']; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Số điện thọai</td>
-                                    <td>
-                                        <?= $bill['bill_tel']; ?>
-                                    </td>
-                                </tr>
-                            </table>
+                            <tr>
+                                <td>Tên khách hàng</td>
+                                <td>
+                                    <?= $bill['bill_user']; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ</td>
+                                <td>
+                                    <?= $bill['bill_address']; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    <?= $bill['bill_email']; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Số điện thọai</td>
+                                <td>
+                                    <?= $bill['bill_tel']; ?>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="mb2 text-center">
-                    <a href="index.php"><input type="button" value="Về trang chủ" class="btn btn-primary" ></a>
+                    <a href="index.php"><input type="button" value="Về trang chủ" class="btn btn-primary"></a>
                 </div>
     </div>
     <?php
