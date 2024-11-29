@@ -36,7 +36,7 @@ td {
     <div class="text-center">
         <?php extract($sanpham); ?>
         <h3 class="badge text-bg-success text-wrap" style="width: 12rem;">
-            chi tiết sản phẩm
+            Chi tiết sản phẩm
 
         </h3>
     </div><br>

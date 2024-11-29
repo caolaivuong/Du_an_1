@@ -47,7 +47,7 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-12 text-center">
                             <!-- Sử dụng col-12 để đảm bảo nút chiếm toàn bộ chiều rộng -->
-                            <a href="index.php" class="btn btn-primary">về trang chủ</a>
+                            <a href="index.php" class="btn btn-primary">Về trang chủ</a>
                         </div>
                     </div>
                 </div>

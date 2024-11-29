@@ -1,21 +1,21 @@
 <style>
-    span {
+span {
 
-        position: relative;
-        left: 100vh;
+    position: relative;
+    left: 100vh;
 
-    }
+}
 
-    .quantity-btn {
-        background-color: #f1f1f1;
-        border: none;
-        padding: 8px 12px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
 </style>
 <main class="catalog mb">
-    <span class="badge text-bg-success ">GIỎ HÀNG</span>
+    <span class="badge text-bg-success ">Giỏ Hàng</span>
     <div id="cart">
         <div class="boxleft">
             <div class="">
