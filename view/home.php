@@ -1,113 +1,236 @@
 <style>
-a {
-    text-decoration: none;
+/* Nền tổng thể */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-/* Nền và viền của thẻ select */
+/* Nút chọn lọc giá */
 #filterSelect {
-    background-color: #f2f2f2;
-    border: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
     padding: 10px;
     font-size: 16px;
-    width: 200px;
-    border-radius: 5px;
-}
-
-/* Tùy chỉnh kiểu mũi tên xuống */
-#filterSelect::after {
-    content: "\25BC";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: #888;
-}
-
-/* Tùy chỉnh tùy chọn trong danh sách */
-#filterSelect option {
-    background-color: #fff;
+    width: 240px;
+    border-radius: 8px;
     color: #555;
+    transition: all 0.3s ease;
 }
 
-.col-4 {
-    padding: 0;
+#filterSelect:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
-.mpvc {
-    position: relative;
+/* Cards sản phẩm */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    width: 400px;
-    /* Điều chỉnh kích thước khung */
-    margin-left: auto;
-    /* Căn giữa */
-    margin-right: auto;
-    /* Căn giữa */
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.mpvc img {
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
     width: 100%;
-    height: 170px;
-    transition: transform 0.4s ease;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.mpvc:hover img {
+.card:hover img {
     transform: scale(1.1);
 }
 
-.service-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    flex-direction: row-reverse;
-    /* Dịch các mục sang phải */
+.card-body {
+    padding: 15px;
+    text-align: center;
 }
 
+.card-body .text-dark-emphasis {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.card-body .text-dark-emphasis:hover {
+    color: #007bff;
+}
+
+.card-body .text-danger {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Nút bấm */
+.btn {
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #007bff);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #a71d2a, #dc3545);
+}
+
+/* Thanh dịch vụ */
+.service-info {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    /* Giới hạn chiều rộng tối đa */
+    width: 100%;
+    /* Cho phép chiều rộng tự động điều chỉnh theo màn hình */
+    box-sizing: border-box;
+    /* Bao gồm padding và border */
+}
+
+/* Các phần tử dịch vụ */
 .service-item {
     display: flex;
     align-items: center;
-    flex: 1;
+    flex-direction: column;
+    max-width: 200px;
     text-align: center;
+    margin: 15px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Tạo hiệu ứng hover cho các phần tử */
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon dịch vụ */
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Thêm hiệu ứng cho icon khi hover */
+.service-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Text trong phần tử dịch vụ */
+.service-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Màu chữ thay đổi khi hover */
+.service-text h4:hover {
+    color: #007bff;
+}
+
+/* Mô tả dịch vụ */
+.service-text p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Thêm màu nền nhẹ cho phần tử dịch vụ khi hover */
+.service-item:hover .service-text p {
+    color: #555;
+}
+
+/* Carousel */
+.carousel-inner img {
+    height: 550px;
+    /* Tăng chiều cao banner */
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
     padding: 10px;
 }
 
-.service-icon {
-    width: 60px;
-    /* Tăng kích thước ảnh */
-    height: 60px;
-    /* Tăng kích thước ảnh */
-    margin-right: 10px;
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.service-text h4 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+/* Phân trang */
+.pagination .page-link {
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: all 0.3s;
 }
 
-.service-text p {
-    font-size: 12px;
-    color: #777;
+.pagination .page-link:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
-/* Đổi màu mũi tên trái và phải thành màu đen */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: black;
-}
-
-/* Nếu muốn mũi tên to hơn */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-size: 30px 30px;
-    /* Tăng kích thước mũi tên */
+.pagination .active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 </style>
+
 
 <main class="catalog  mb ">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">

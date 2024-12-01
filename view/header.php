@@ -25,7 +25,7 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
@@ -34,28 +34,32 @@ body {
 /* Navbar */
 .navbar {
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    border-bottom: 2px solid #e67e22;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    border-bottom: 2px solid #f1c40f;
+    transition: background-color 0.3s ease;
 }
 
 .navbar-brand img {
     border-radius: 8px;
-    max-height: 60px;
+    max-height: 50px;
+    /* Giảm chiều cao logo */
 }
 
 .navbar .nav-link {
-    font-size: 15px;
+    font-size: 14px;
+    /* Chỉnh lại font-size nhỏ hơn */
     font-weight: 500;
-    color: #2c3e50;
+    color: #34495e;
     margin: 0 12px;
     text-transform: uppercase;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .nav-link:hover {
-    color: #e67e22;
-    transform: scale(1.1);
+    color: #f1c40f;
+    transform: scale(1.05);
+    /* Phóng to nhẹ khi hover */
 }
 
 .navbar .dropdown-menu {
@@ -65,34 +69,36 @@ body {
 }
 
 .navbar .dropdown-item {
-    font-size: 14px;
-    color: #2c3e50;
-    padding: 10px 15px;
+    font-size: 13px;
+    /* Chỉnh font-size nhỏ hơn cho item */
+    color: #34495e;
+    padding: 10px 18px;
 }
 
 .navbar .dropdown-item:hover {
     background-color: #f8f9fa;
-    color: #e67e22;
+    color: #f1c40f;
 }
 
 /* Search Box */
 .custom-input {
     position: relative;
-    width: 300px;
+    width: 280px;
 }
 
 .custom-input input {
     width: 100%;
-    padding: 10px 15px;
+    padding: 10px 18px;
     border: 2px solid #ddd;
-    border-radius: 20px;
-    font-size: 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    /* Giảm font-size của input */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-input input:focus {
-    border-color: #e67e22;
-    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.2);
+    border-color: #f1c40f;
+    box-shadow: 0 4px 8px rgba(241, 196, 15, 0.2);
     outline: none;
 }
 
@@ -101,7 +107,7 @@ body {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
-    left: 10px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: #aaa;
@@ -111,24 +117,25 @@ body {
 .cus-input {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-left: 15px;
+    gap: 18px;
+    margin-left: 18px;
 }
 
 .cus-input a {
-    font-size: 14px;
+    font-size: 13px;
+    /* Giảm kích thước chữ cho các link */
     font-weight: 500;
-    color: #2c3e50;
+    color: #34495e;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .cus-input a:hover {
-    color: #e67e22;
-    transform: scale(1.1);
+    color: #f1c40f;
+    transform: scale(1.05);
 }
 
 /* Navbar Toggle Button */
@@ -137,14 +144,14 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #2c3e50;
+    background-color: #34495e;
     border-radius: 3px;
 }
 
 /* Active Page Highlight */
 .nav-link.active {
     font-weight: bold;
-    color: #e67e22;
+    color: #f1c40f;
     text-decoration: underline;
 }
 
@@ -162,7 +169,7 @@ body {
     .cus-input {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
     }
 }
 </style>

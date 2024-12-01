@@ -1,28 +1,67 @@
-    <style>
+<style>
 .confirmation {
     width: 400px;
     margin: 100px auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .confirmation h2 {
     margin-bottom: 20px;
     color: #333;
-}
-
-.confirmation form {
-    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .confirmation p {
     margin-top: 20px;
     color: #666;
+    font-size: 16px;
 }
-    </style>
+
+.inp {
+    margin-top: 30px;
+}
+
+.btn_1 {
+    background-color: #dc3545;
+    /* Đỏ tươi */
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn_1:hover {
+    background-color: #c82333;
+    /* Đỏ đậm khi hover */
+    transform: translateY(-2px);
+    /* Tạo hiệu ứng di chuyển lên khi hover */
+}
+
+.btn_1:active {
+    transform: translateY(2px);
+    /* Hiệu ứng khi nhấn */
+}
+
+.confirmation p {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.confirmation input[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+</style>
+
 <body>
     <div class="confirmation">
         <h2>Xác nhận hủy đơn hàng</h2>
@@ -35,3 +74,4 @@
         </form>
         <p>Bạn có chắc chắn muốn hủy đơn hàng này?</p>
     </div>
+</body>

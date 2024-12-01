@@ -6,12 +6,12 @@
                     ĐĂNG KÝ TÀI KHOẢN
                 </div>
                 <div class="box_content ">
-                    <form action="index.php?act=dangky" method="post" >
+                    <form action="index.php?act=dangky" method="post">
                         <div class="row justify-content-center">
                             <div class="col-4 ">
                                 <label class="form-label">Email:</label>
                                 <input type="email" name="email"
-                                    class="form-control ct-input border border-primary-subtle " >
+                                    class="form-control ct-input border border-primary-subtle ">
                             </div>
                         </div>
                         <div class="row justify-content-center">

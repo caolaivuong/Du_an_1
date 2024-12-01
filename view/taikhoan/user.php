@@ -1,9 +1,79 @@
 <style>
-a {
+/* Định dạng chung */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.boxright {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.form_li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.form_li a {
+    display: block;
+    padding: 12px 20px;
+    color: #007bff;
     text-decoration: none;
-    color: #495057;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s;
+}
+
+.form_li a:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-success {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb {
+    margin-bottom: 30px;
 }
 </style>
+
 <main>
     <div class="boxright">
         <div class="mb"><br>
