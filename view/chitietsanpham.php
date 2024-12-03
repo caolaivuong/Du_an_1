@@ -212,10 +212,11 @@ body {
     </div>
 
     <div class="comment-form">
-        <form action="">
-            <input type="text" name="msg" placeholder="Nhập bình luận của bạn">
-            <button type="submit" class="btn btn-warning" name="guibinhluan">Gửi bình luận</button>
+        <form method="post" action="index.php?act=sanphamct&idsp=<?php echo $sanpham['id']; ?>">
+            <textarea name="noidung" placeholder="Nhập bình luận..."></textarea>
+            <button type="submit" name="guibinhluan">Gửi bình luận</button>
         </form>
+
     </div>
 
     <?php

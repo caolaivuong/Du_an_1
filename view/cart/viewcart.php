@@ -1,5 +1,5 @@
 <style>
-/* Chung cho các phần tử */
+/* Tổng thể */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -23,11 +23,12 @@ span.badge {
     margin-bottom: 20px;
 }
 
+/* Bảng */
 .table {
     width: 100%;
-    margin-bottom: 1rem;
     background-color: #fff;
     border-collapse: collapse;
+    margin-bottom: 1rem;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -44,44 +45,56 @@ span.badge {
     color: white;
 }
 
-.table tr:hover {
-    background-color: #f1f1f1;
+/* Nút số lượng */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Khoảng cách giữa nút và số lượng */
 }
 
-/* Nút tăng giảm số lượng */
 .quantity-btn {
     background-color: #007bff;
     border: none;
     color: white;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .quantity-btn:hover {
     background-color: #0056b3;
 }
 
-.container {
+.quantity-btn:active {
+    transform: scale(0.9);
+}
+
+.quantity-display {
+    font-size: 16px;
+    font-weight: bold;
+    width: 40px;
     text-align: center;
 }
 
+/* Nút hành động */
 .container a {
     margin: 10px;
     text-decoration: none;
 }
 
-.container .btn {
-    padding: 10px 30px;
+.btn {
+    padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
-/* Các nút */
 .btn-secondary {
     background-color: #6c757d;
     color: white;
@@ -99,22 +112,6 @@ span.badge {
 
 .btn:hover {
     transform: scale(1.05);
-}
-
-.text-center p {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-/* Thêm hiệu ứng cho các thay đổi số lượng */
-.quantity-btn {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.quantity-btn:active {
-    transform: scale(0.9);
-    /* Tạo hiệu ứng nén khi nhấn */
 }
 </style>
 
@@ -135,27 +132,32 @@ span.badge {
                     </thead>
                     <tbody>
                         <?php
-                            if (isset($_SESSION['mycart']) && is_array($_SESSION['mycart'])) {
-                                $total = 0;  // Tổng giá trị giỏ hàng
-                                foreach ($_SESSION['mycart'] as $id => $product) {
-                                    $productTotal = $product['soluong'] * $product['price'];
-                                    $total += $productTotal;
-                                    echo '
-                                    <tr>
-                                        <td>' . $product['name'] . '</td>
-                                        <td>
-                                            <form method="post" action="index.php?act=updatecart&id=' . $id . '">
-                                                <button type="submit" name="action" value="decrease" class="quantity-btn">-</button>
-                                                ' . $product['soluong'] . '
-                                                <button type="submit" name="action" value="increase" class="quantity-btn">+</button>
-                                            </form>
-                                        </td>
-                                        <td>' . number_format($product['price'], 0, ',', '.') . ' đ</td>
-                                        <td>' . number_format($productTotal, 0, ',', '.') . ' đ</td>
-                                        <td><a href="index.php?act=delcart&id=' . $id . '" class="btn btn-danger">Xóa</a></td>
-                                    </tr>';
-                                }
+                        if (isset($_SESSION['mycart']) && is_array($_SESSION['mycart'])) {
+                            $total = 0; // Tổng giá trị giỏ hàng
+                            foreach ($_SESSION['mycart'] as $id => $product) {
+                                $productTotal = $product['soluong'] * $product['price'];
+                                $total += $productTotal;
+
+                                // Kiểm tra lỗi
+                                $errorMessage = isset($product['error']) ? '<small class="text-danger">' . $product['error'] . '</small>' : '';
+
+                                echo '
+                                <tr>
+                                    <td>' . $product['name'] . '</td>
+                                    <td>
+                                        <div class="quantity-control">
+                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'decrease\')">-</button>
+                                            <span class="quantity-display" id="quantity-' . $id . '">' . $product['soluong'] . '</span>
+                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'increase\')">+</button>
+                                        </div>
+                                        ' . $errorMessage . '
+                                    </td>
+                                    <td>' . number_format($product['price'], 0, ',', '.') . ' đ</td>
+                                    <td>' . number_format($productTotal, 0, ',', '.') . ' đ</td>
+                                    <td><a href="index.php?act=delcart&id=' . $id . '" class="btn btn-danger btn-sm">Xóa</a></td>
+                                </tr>';
                             }
+                        }
                         ?>
                     </tbody>
                 </table>
@@ -163,6 +165,8 @@ span.badge {
                     <p><strong>Tổng tiền: <?php echo number_format($total, 0, ',', '.') . ' đ'; ?></strong></p>
                 </div>
             </div>
+
+            <!-- Các nút điều hướng -->
             <div class="container text-center">
                 <a href="index.php"><input type="button" class="btn btn-secondary" value="Về trang chủ"></a>
                 <a href="index.php?act=bill"><input type="button" class="btn btn-info" value="Thanh Toán"></a>
@@ -173,18 +177,34 @@ span.badge {
     </div>
 
     <script>
-    // Gửi yêu cầu AJAX cập nhật số lượng mà không làm reload toàn bộ trang
     function updateCart(id, action) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'index.php?act=updatecart&id=' + id + '&action=' + action, true);
+        const quantityElement = document.getElementById('quantity-' + id);
+        let currentQuantity = parseInt(quantityElement.innerText);
+        const maxQuantity = 10;
+
+        if (action === 'increase' && currentQuantity < maxQuantity) {
+            currentQuantity++;
+        } else if (action === 'decrease' && currentQuantity > 1) {
+            currentQuantity--;
+        } else {
+            alert('Số lượng không hợp lệ!');
+            return;
+        }
+
+        // Cập nhật số lượng trực tiếp trên giao diện
+        quantityElement.innerText = currentQuantity;
+
+        // Gửi yêu cầu AJAX để cập nhật giỏ hàng
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'index.php?act=updatecart&id=' + id, true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Cập nhật giao diện mà không reload
+                // Đọc dữ liệu trả về và cập nhật giỏ hàng
                 document.getElementById('cart').innerHTML = xhr.responseText;
             }
         };
-        xhr.send();
+        xhr.send('action=' + action + '&id=' + id + '&quantity=' + currentQuantity);
     }
     </script>
 </main>

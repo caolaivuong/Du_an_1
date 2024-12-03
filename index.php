@@ -38,21 +38,29 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/sanpham.php";
             break;
 
-        case "sanphamct":
-            if (isset($_POST['guibinhluan'])) {
-                insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-            }
-            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
-                $sanpham = loadone_sanpham($_GET['idsp']);
-                $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
-                // $binhluan = loadall_binhluan($_GET['idsp']);
-                include "view/chitietsanpham.php";
-            } else {
-                include "view/home.php";
-            }
+       case "sanphamct":
+    if (isset($_POST['guibinhluan'])) {
+        $noidung = $_POST['noidung'];
+        $iduser = $_SESSION['user']['id']; // Lấy ID user từ session
+        $idpro = $_GET['idsp']; // Lấy ID sản phẩm từ URL
+        $ngaybinhluan = date('Y-m-d H:i:s'); // Lấy thời gian hiện tại
+        
+        if (!empty($noidung) && $iduser > 0 && $idpro > 0) {
+            insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+        } else {
+            $error = "Vui lòng nhập nội dung bình luận hợp lệ!";
+        }
+    }
 
+    if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+        $sanpham = loadone_sanpham($_GET['idsp']);
+        $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
+        include "view/chitietsanpham.php";
+    } else {
+        include "view/home.php";
+    }
+    break;
 
-            break;
         // case 'capnhatctsp':
         //     ob_end_clean();
         //     $idsp = $_REQUEST['idsp'];
@@ -210,36 +218,36 @@ case 'updatecart':
         $id = $_GET['id'];
         $action = $_POST['action'];
 
-        // Kiểm tra nếu sản phẩm tồn tại trong giỏ hàng
+        // Giới hạn số lượng
+        $maxQuantity = 10;
+
         if (isset($_SESSION['mycart'][$id])) {
             $soluong = $_SESSION['mycart'][$id]['soluong'];
 
-            // Tăng số lượng nếu người dùng nhấn nút "increase"
             if ($action == 'increase') {
-                $_SESSION['mycart'][$id]['soluong'] = $soluong + 1;
-            }
-
-            // Giảm số lượng nếu người dùng nhấn nút "decrease", đảm bảo số lượng không nhỏ hơn 1
-            elseif ($action == 'decrease' && $soluong > 1) {
-                $_SESSION['mycart'][$id]['soluong'] = $soluong - 1;
+                // Tăng số lượng, kiểm tra không vượt quá giới hạn
+                if ($soluong < $maxQuantity) {
+                    $_SESSION['mycart'][$id]['soluong']++;
+                    unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
+                } else {
+                    $_SESSION['mycart'][$id]['error'] = "Không thể thêm quá $maxQuantity sản phẩm!";
+                }
+            } elseif ($action == 'decrease') {
+                // Giảm số lượng, đảm bảo không nhỏ hơn 1
+                if ($soluong > 1) {
+                    $_SESSION['mycart'][$id]['soluong']--;
+                    unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
+                } else {
+                    $_SESSION['mycart'][$id]['error'] = "Số lượng không được nhỏ hơn 1!";
+                }
             }
         }
     }
 
-    // Xử lý thay đổi size
-    if (isset($_GET['id']) && isset($_POST['size'])) {
-        $id = $_GET['id'];
-        $size = $_POST['size'];
-
-        // Cập nhật size trong giỏ hàng
-        if (isset($_SESSION['mycart'][$id])) {
-            $_SESSION['mycart'][$id]['size'] = $size;
-        }
-    }
-
-    // Sau khi cập nhật, bạn sẽ hiển thị lại giỏ hàng
-    include "view/cart/viewcart.php";  // Hiển thị lại giỏ hàng sau khi cập nhật
+    // Hiển thị lại giỏ hàng
+    include "view/cart/viewcart.php";
     break;
+
 
 case 'delcart':
     if (isset($_GET['id'])) {
