@@ -17,7 +17,7 @@
         <div class="text-center">
             <h2 class="badge text-bg-success">THÔNG TIN ĐƠN HÀNG</h2>
             <div class="box_content" style="text-align: center;">
-                <p>Mã Đơn Hàng:DVT-
+                <p>Mã Đơn Hàng:B-
                     <?= $bill['id']; ?>
                 </p>
                 <p>Ngày đặt hàng:

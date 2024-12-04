@@ -146,14 +146,14 @@ span.badge {
                                     <td>' . $product['name'] . '</td>
                                     <td>
                                         <div class="quantity-control">
-                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'decrease\')">-</button>
+                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'decrease\', event)">-</button>
                                             <span class="quantity-display" id="quantity-' . $id . '">' . $product['soluong'] . '</span>
-                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'increase\')">+</button>
+                                            <button class="quantity-btn" onclick="updateCart(' . $id . ', \'increase\', event)">+</button>
                                         </div>
                                         ' . $errorMessage . '
                                     </td>
-                                    <td>' . number_format($product['price'], 0, ',', '.') . ' đ</td>
-                                    <td>' . number_format($productTotal, 0, ',', '.') . ' đ</td>
+                                    <td id="price-' . $id . '">' . number_format($product['price'], 0, ',', '.') . ' đ</td>
+                                    <td id="total-' . $id . '">' . number_format($productTotal, 0, ',', '.') . ' đ</td>
                                     <td><a href="index.php?act=delcart&id=' . $id . '" class="btn btn-danger btn-sm">Xóa</a></td>
                                 </tr>';
                             }
@@ -162,7 +162,9 @@ span.badge {
                     </tbody>
                 </table>
                 <div class="text-center">
-                    <p><strong>Tổng tiền: <?php echo number_format($total, 0, ',', '.') . ' đ'; ?></strong></p>
+                    <p><strong>Tổng tiền: <span
+                                id="cart-total"><?php echo number_format($total, 0, ',', '.') . ' đ'; ?></span></strong>
+                    </p>
                 </div>
             </div>
 
@@ -177,34 +179,58 @@ span.badge {
     </div>
 
     <script>
-    function updateCart(id, action) {
+    function updateCart(id, action, event) {
+        event.preventDefault();
+        event.stopPropagation();
+
         const quantityElement = document.getElementById('quantity-' + id);
         let currentQuantity = parseInt(quantityElement.innerText);
         const maxQuantity = 10;
+        const errorMessageElement = document.getElementById('error-' + id);
 
+        // Reset thông báo lỗi
+        if (errorMessageElement) {
+            errorMessageElement.remove();
+        }
+
+        // Cập nhật số lượng
         if (action === 'increase' && currentQuantity < maxQuantity) {
             currentQuantity++;
         } else if (action === 'decrease' && currentQuantity > 1) {
             currentQuantity--;
         } else {
-            alert('Số lượng không hợp lệ!');
+            // Hiển thị thông báo lỗi nếu số lượng không hợp lệ
+            const errorMessage = document.createElement('small');
+            errorMessage.classList.add('text-danger');
+            errorMessage.id = 'error-' + id;
+            if (action === 'increase') {
+                errorMessage.innerText = 'Bạn không được mua quá 10 sản phẩm!';
+            } else {
+                errorMessage.innerText = 'Bạn không được mua dưới 1 sản phẩm!';
+            }
+            quantityElement.parentElement.appendChild(errorMessage);
             return;
         }
 
-        // Cập nhật số lượng trực tiếp trên giao diện
+        // Cập nhật số lượng hiển thị trên giao diện
         quantityElement.innerText = currentQuantity;
 
-        // Gửi yêu cầu AJAX để cập nhật giỏ hàng
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'index.php?act=updatecart&id=' + id, true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // Đọc dữ liệu trả về và cập nhật giỏ hàng
-                document.getElementById('cart').innerHTML = xhr.responseText;
-            }
-        };
-        xhr.send('action=' + action + '&id=' + id + '&quantity=' + currentQuantity);
+        // Cập nhật lại giá trị tổng cho sản phẩm này
+        const priceElement = document.getElementById('price-' + id);
+        const totalElement = document.getElementById('total-' + id);
+        const productPrice = parseInt(priceElement.innerText.replace(/\D/g, ''));
+        const productTotal = productPrice * currentQuantity;
+
+        totalElement.innerText = productTotal.toLocaleString() + ' đ';
+
+        // Cập nhật lại tổng giỏ hàng
+        const cartTotalElement = document.getElementById('cart-total');
+        const currentCartTotal = Array.from(document.querySelectorAll('.table td[id^="total-"]')).reduce((sum,
+            totalElem) => {
+            return sum + parseInt(totalElem.innerText.replace(/\D/g, ''));
+        }, 0);
+
+        cartTotalElement.innerText = currentCartTotal.toLocaleString() + ' đ';
     }
     </script>
 </main>

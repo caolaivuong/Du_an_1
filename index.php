@@ -45,11 +45,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         $idpro = $_GET['idsp']; // Lấy ID sản phẩm từ URL
         $ngaybinhluan = date('Y-m-d H:i:s'); // Lấy thời gian hiện tại
         
-        if (!empty($noidung) && $iduser > 0 && $idpro > 0) {
-            insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-        } else {
-            $error = "Vui lòng nhập nội dung bình luận hợp lệ!";
-        }
+       if (!empty($noidung) && $iduser > 0 && $idpro > 0) {
+    insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+    $successMessage = "Bình luận của bạn đã được gửi!";
+} else {
+    $error = "Vui lòng nhập nội dung bình luận hợp lệ!";
+}
+
     }
 
     if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
@@ -218,14 +220,14 @@ case 'updatecart':
         $id = $_GET['id'];
         $action = $_POST['action'];
 
-        // Giới hạn số lượng
+        // Giới hạn số lượng sản phẩm trong giỏ hàng
         $maxQuantity = 10;
 
         if (isset($_SESSION['mycart'][$id])) {
             $soluong = $_SESSION['mycart'][$id]['soluong'];
 
             if ($action == 'increase') {
-                // Tăng số lượng, kiểm tra không vượt quá giới hạn
+                // Tăng số lượng sản phẩm, kiểm tra giới hạn
                 if ($soluong < $maxQuantity) {
                     $_SESSION['mycart'][$id]['soluong']++;
                     unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
@@ -233,7 +235,7 @@ case 'updatecart':
                     $_SESSION['mycart'][$id]['error'] = "Không thể thêm quá $maxQuantity sản phẩm!";
                 }
             } elseif ($action == 'decrease') {
-                // Giảm số lượng, đảm bảo không nhỏ hơn 1
+                // Giảm số lượng sản phẩm, không nhỏ hơn 1
                 if ($soluong > 1) {
                     $_SESSION['mycart'][$id]['soluong']--;
                     unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
@@ -244,8 +246,8 @@ case 'updatecart':
         }
     }
 
-    // Hiển thị lại giỏ hàng
-    include "view/cart/viewcart.php";
+    // Sau khi cập nhật, hiển thị lại giỏ hàng
+    include "view/cart/viewcart.php"; // Đảm bảo file này có giao diện hiển thị giỏ hàng sau khi cập nhật
     break;
 
 
