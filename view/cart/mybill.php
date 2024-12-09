@@ -20,31 +20,34 @@
                             </thead>
                             <tbody>
                                 <?php
-            if (is_array($listbill)) {
-                foreach ($listbill as $bill) {
-                    extract($bill);
-                    $ttdh = get_ttdh($bill['bill_status']);
-                    $countsp = loadall_cart_count($bill['id']);
-                    $huydh = "index.php?act=huydh&id=" . $id;
-                    echo '
-                    <tr>
-                        <td>DH' . $bill['id'] . '</td>
-                        <td>' . $bill['ngaydathang'] . '</td>
-                        <td>' . $countsp . '</td>
-                        <td>' . $bill['total'] . '</td>
-                        <td>' . $ttdh . '</td>
-                        <td><a href="' . $huydh . '">Hủy đơn hàng</a></td>
-                    </tr>';
-                }
-            }
-        ?>
+                                if (is_array($listbill)) {
+                                    // Sắp xếp đơn hàng theo thứ tự mới nhất
+                                    usort($listbill, function ($a, $b) {
+                                        return $b['id'] <=> $a['id']; // Sắp xếp theo ID giảm dần
+                                    });
+
+                                    foreach ($listbill as $bill) {
+                                        extract($bill);
+                                        $ttdh = get_ttdh($bill['bill_status']); // Lấy trạng thái đơn hàng
+                                        $countsp = loadall_cart_count($bill['id']); // Lấy số lượng sản phẩm trong đơn
+                                        $huydh = "index.php?act=huydh&id=" . $id; // Đường dẫn hủy đơn hàng
+                                        echo '
+                                        <tr>
+                                            <td>DH' . $bill['id'] . '</td>
+                                            <td>' . $bill['ngaydathang'] . '</td>
+                                            <td>' . $countsp . '</td>
+                                            <td>' . number_format($bill['total'], 0, ',', '.') . ' đ</td>
+                                            <td>' . $ttdh . '</td>
+                                            <td><a href="' . $huydh . '" class="btn btn-danger" onclick="return confirmDelete()">Hủy đơn hàng</a></td>
+                                        </tr>';
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
-
                     </div>
                     <div class="row mb-3 justify-content-center">
                         <div class="col-12 text-center">
-                            <!-- Sử dụng col-12 để đảm bảo nút chiếm toàn bộ chiều rộng -->
                             <a href="index.php" class="btn btn-primary">Về trang chủ</a>
                         </div>
                     </div>
@@ -53,3 +56,9 @@
         </div>
     </div>
 </main>
+
+<script>
+function confirmDelete() {
+    return confirm("Bạn có chắc chắn muốn hủy đơn hàng này?");
+}
+</script>

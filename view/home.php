@@ -236,16 +236,16 @@ body {
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://png.pngtree.com/template/20220330/ourmid/pngtree-yellow-background-autumn-and-winter-new-product-promotion-poster-banner-men-image_900086.jpg"
+                <img src="https://file.hstatic.net/1000369857/collection/1919_730_polo_3da01ded33614497a1884a3b99489661.jpg"
                     class="d-block w-100" width="200" height="500" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://intphcm.com/data/upload/banner-thoi-trang-dep.jpg" class="d-block w-100" width="200"
-                    height="500" alt="...">
+                <img src="https://pubcdn.ivymoda.com/files/news/2024/06/07/web-NGUYENGIA_3.jpg" class="d-block w-100"
+                    width="200" height="500" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://intphcm.com/data/upload/banner-thoi-trang-nam-dep.jpg" class="d-block w-100"
-                    width="200" height="500" alt="...">
+                <img src="https://tmluxury.vn/wp-content/uploads/shop-quan-jean-nam-quan-1-tm-luxury.jpg"
+                    class="d-block w-100" width="200" height="500" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
