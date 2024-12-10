@@ -10,7 +10,7 @@
             <div class="box_title"></div>
             <div class="box_content">
                 <center>
-                    <h2>cảm ơn quý khách đã đặt hàng!</h2>
+                    <h2>Cảm ơn quý khách đã đặt hàng!</h2>
                 </center>
             </div>
         </div>

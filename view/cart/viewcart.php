@@ -177,7 +177,6 @@ span.badge {
             <br>
         </div>
     </div>
-
     <script>
     function updateCart(id, action, event) {
         event.preventDefault();
@@ -185,16 +184,15 @@ span.badge {
 
         const quantityElement = document.getElementById('quantity-' + id);
         let currentQuantity = parseInt(quantityElement.innerText);
-        const maxQuantity = 10;
-        const errorMessageElement = document.getElementById('error-' + id);
 
         // Reset thông báo lỗi
+        const errorMessageElement = document.getElementById('error-' + id);
         if (errorMessageElement) {
             errorMessageElement.remove();
         }
 
         // Cập nhật số lượng
-        if (action === 'increase' && currentQuantity < maxQuantity) {
+        if (action === 'increase') {
             currentQuantity++;
         } else if (action === 'decrease' && currentQuantity > 1) {
             currentQuantity--;
@@ -204,9 +202,9 @@ span.badge {
             errorMessage.classList.add('text-danger');
             errorMessage.id = 'error-' + id;
             if (action === 'increase') {
-                errorMessage.innerText = 'Bạn không được mua quá 10 sản phẩm!';
+                errorMessage.innerText = 'Số lượng không thể tăng nữa!';
             } else {
-                errorMessage.innerText = 'Bạn không được mua dưới 1 sản phẩm!';
+                errorMessage.innerText = 'Số lượng không được nhỏ hơn 1!';
             }
             quantityElement.parentElement.appendChild(errorMessage);
             return;
@@ -231,6 +229,12 @@ span.badge {
         }, 0);
 
         cartTotalElement.innerText = currentCartTotal.toLocaleString() + ' đ';
+
+        // Gửi yêu cầu AJAX để cập nhật giỏ hàng trong session
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'index.php?act=updatecart&id=' + id, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('action=' + action);
     }
     </script>
 </main>

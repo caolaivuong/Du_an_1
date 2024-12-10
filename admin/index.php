@@ -206,6 +206,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listbill = loadall_bill();
             include "bill/listbill.php";
             break;
+     
 
         case 'thongke':
             $listthongke = loadall_thongke();

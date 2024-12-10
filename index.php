@@ -223,34 +223,23 @@ case 'updatecart':
         $id = $_GET['id'];
         $action = $_POST['action'];
 
-        // Giới hạn số lượng sản phẩm trong giỏ hàng
-        $maxQuantity = 10;
-
         if (isset($_SESSION['mycart'][$id])) {
             $soluong = $_SESSION['mycart'][$id]['soluong'];
 
             if ($action == 'increase') {
-                // Tăng số lượng sản phẩm, kiểm tra giới hạn
-                if ($soluong < $maxQuantity) {
-                    $_SESSION['mycart'][$id]['soluong']++;
-                    unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
-                } else {
-                    $_SESSION['mycart'][$id]['error'] = "Không thể thêm quá $maxQuantity sản phẩm!";
-                }
+                // Tăng số lượng sản phẩm
+                $_SESSION['mycart'][$id]['soluong']++;
             } elseif ($action == 'decrease') {
-                // Giảm số lượng sản phẩm, không nhỏ hơn 1
+                // Giảm số lượng sản phẩm nếu không nhỏ hơn 1
                 if ($soluong > 1) {
                     $_SESSION['mycart'][$id]['soluong']--;
-                    unset($_SESSION['mycart'][$id]['error']); // Xóa lỗi (nếu có)
-                } else {
-                    $_SESSION['mycart'][$id]['error'] = "Số lượng không được nhỏ hơn 1!";
                 }
             }
+
+            // Gửi thông báo hoặc cập nhật dữ liệu khác nếu cần
+            echo json_encode(['success' => true]);
         }
     }
-
-    // Sau khi cập nhật, hiển thị lại giỏ hàng
-    include "view/cart/viewcart.php"; // Đảm bảo file này có giao diện hiển thị giỏ hàng sau khi cập nhật
     break;
 
 
