@@ -16,12 +16,12 @@ ul.list-unstyled li {
 }
 </style>
 <div class="container">
-    <h2 class="text-center text-primary mb-4">Chi tiết đơn hàng #<?= $bill['id'] ?></h2>
+    <h2 class="text-center text-primary mb-4">Chi tiết đơn hàng <?= $bill['id'] ?></h2>
 
     <div class="row justify-content-center mb-4">
         <div class="col-md-8">
             <h5 class="text-center"><strong>Ngày đặt:</strong> <?= $bill['ngaydathang'] ?></h5>
-            <h5 class="text-center"><strong>Thông tin người nhận:</strong></h5>
+            <h5 class="text-center"><strong>Thông tin người nhận hàng:</strong></h5>
             <div class="text-center">
                 <ul class="list-unstyled">
                     <li><strong>Tên người nhận:</strong> <?= $bill['bill_user'] ?></li>
@@ -42,7 +42,7 @@ ul.list-unstyled li {
                     <tr class="table-info">
                         <th>Tên sản phẩm</th>
                         <th>Ảnh</th>
-                        <th>Giá</th>
+                        <th>Giá sản phẩm</th>
                         <th>Số lượng</th>
                         <th>Tổng</th>
                     </tr>
@@ -64,8 +64,6 @@ ul.list-unstyled li {
     </div>
 
     <div class="text-center mt-4">
-        <a href="cart/mybill.php" class="btn btn-primary btn-lg">Quay lại</a>
-
         <a href="index.php" class="btn btn-success btn-lg">Trang Chủ</a>
     </div>
 </div>
