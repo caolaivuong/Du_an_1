@@ -1,3 +1,62 @@
+<style>
+/* Định dạng cho các nút */
+.table .btn {
+    background-color: #007bff;
+    /* Màu nền xanh dương */
+    color: white;
+    /* Màu chữ trắng */
+    padding: 10px 20px;
+    /* Đệm cho nút */
+    font-size: 14px;
+    /* Kích thước chữ */
+    font-weight: bold;
+    /* Làm đậm chữ */
+    text-align: center;
+    /* Căn giữa chữ */
+    border-radius: 5px;
+    /* Bo góc cho nút */
+    border: none;
+    /* Không viền */
+    transition: all 0.3s ease;
+    /* Hiệu ứng chuyển màu và phóng to */
+}
+
+/* Hiệu ứng hover cho các nút */
+.table .btn:hover {
+    background-color: #0056b3;
+    /* Màu nền khi hover */
+    transform: scale(1.05);
+    /* Tăng kích thước nút khi hover */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi di chuột */
+}
+
+/* Hiệu ứng focus cho các nút */
+.table .btn:focus {
+    outline: none;
+    /* Tắt viền khi focus */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    /* Tạo bóng khi focus */
+}
+
+/* Tạo khoảng cách giữa hai nút */
+.table .btn-group {
+    display: flex;
+    /* Dùng flex để căn chỉnh các nút ngang */
+    justify-content: center;
+    /* Căn giữa các nút */
+}
+
+.table .btn-group .btn {
+    margin-right: 10px;
+    /* Tạo khoảng cách giữa các nút */
+}
+
+/* Loại bỏ margin cho nút cuối cùng trong nhóm */
+.table .btn-group .btn:last-child {
+    margin-right: 0;
+}
+</style>
 <main class="container mb">
     <div class="row">
         <div class="col-md-8">
