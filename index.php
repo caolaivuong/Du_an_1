@@ -38,20 +38,23 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/sanpham.php";
             break;
 
-       case "sanphamct":
+   case "sanphamct":
     if (isset($_POST['guibinhluan'])) {
-        $noidung = $_POST['noidung'];
-        $iduser = $_SESSION['user']['id']; // Lấy ID user từ session
-        $idpro = $_GET['idsp']; // Lấy ID sản phẩm từ URL
-        $ngaybinhluan = date('Y-m-d H:i:s'); // Lấy thời gian hiện tại
-        
-       if (!empty($noidung) && $iduser > 0 && $idpro > 0) {
-    insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-    $successMessage = "Bình luận của bạn đã được gửi!";
-} else {
-    $error = "Vui lòng nhập nội dung bình luận hợp lệ!";
-}
+        if (!isset($_SESSION['user'])) {
+            $error = "Bạn phải đăng nhập mới có thể bình luận!";
+        } else {
+            $noidung = $_POST['noidung'];
+            $iduser = $_SESSION['user']['id']; // ID user từ session
+            $idpro = $_GET['idsp']; // ID sản phẩm từ URL
+            $ngaybinhluan = date('Y-m-d H:i:s'); // Thời gian hiện tại
 
+            if (!empty($noidung) && $iduser > 0 && $idpro > 0) {
+                insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+                $successMessage = "Bình luận của bạn đã được gửi!";
+            } else {
+                $error = "Vui lòng nhập nội dung bình luận hợp lệ!";
+            }
+        }
     }
 
     if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {

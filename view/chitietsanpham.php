@@ -164,6 +164,7 @@ body {
 
 <main class="container">
     <input type="hidden" name="" value="">
+
     <div class="text-center">
         <?php extract($sanpham); ?>
         <h3 class="badge text-bg-success text-wrap" style="width: 12rem;">
@@ -211,12 +212,14 @@ body {
         ?>
     </div>
 
+    <!-- Phần bình luận -->
     <div class="comment-form">
+        <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
+        <?php if (isset($successMessage)) { echo "<p style='color: green;'>$successMessage</p>"; } ?>
         <form method="post" action="index.php?act=sanphamct&idsp=<?php echo $sanpham['id']; ?>">
             <textarea name="noidung" placeholder="Nhập bình luận..."></textarea>
             <button type="submit" name="guibinhluan">Gửi bình luận</button>
         </form>
-
     </div>
 
     <?php
@@ -225,6 +228,7 @@ body {
 </main>
 
 <script>
+// JavaScript xử lý thay đổi số lượng sản phẩm
 var selectedSize = '';
 
 function setSize(size) {
