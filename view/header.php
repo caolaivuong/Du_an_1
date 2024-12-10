@@ -352,7 +352,7 @@ body {
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark-emphasis" href="index.php?act=gioithieu">giới Thiệu</a>
+                    <a class="nav-link text-dark-emphasis" href="index.php?act=gioithieu">Giới Thiệu</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-dark-emphasis" href="#" role="button"
@@ -366,7 +366,7 @@ body {
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=21">Áo Polo</a>
                         </li>
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=19">Quần
-                                jeans</a></li>
+                                Jeans</a></li>
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=20">Váy Nữ</a>
                         </li>
                     </ul>
@@ -385,9 +385,9 @@ body {
                 </div>
                 <div class="cus-input">
                     <a href="index.php?act=user" class="text-dark-emphasis"><i class="fa-solid fa-user"></i>Tài
-                        khoản</a>
+                        Khoản</a>
                     <a href="index.php?act=viewcart" class="text-dark-emphasis"> <i
-                            class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
+                            class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a>
                 </div>
             </form>
         </div>
