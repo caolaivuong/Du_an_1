@@ -172,6 +172,164 @@ body {
         gap: 12px;
     }
 }
+
+/* Cards sản phẩm */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body .text-dark-emphasis {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.card-body .text-dark-emphasis:hover {
+    color: #007bff;
+}
+
+.card-body .text-danger {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Nút bấm */
+.btn {
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #007bff);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #a71d2a, #dc3545);
+}
+
+/* Thanh dịch vụ */
+.service-info {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Các phần tử dịch vụ */
+.service-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 200px;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho các phần tử dịch vụ */
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon dịch vụ */
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho icon */
+.service-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Text dịch vụ */
+.service-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Màu chữ thay đổi khi hover */
+.service-text h4:hover {
+    color: #007bff;
+}
+
+/* Mô tả dịch vụ */
+.service-text p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Thêm màu nền nhẹ khi hover */
+.service-item:hover .service-text p {
+    color: #555;
+}
 </style>
 
 <body>
