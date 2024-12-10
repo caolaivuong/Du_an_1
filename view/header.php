@@ -385,9 +385,9 @@ body {
                 </div>
                 <div class="cus-input">
                     <a href="index.php?act=user" class="text-dark-emphasis"><i class="fa-solid fa-user"></i>Tài
-                        Khoản</a>
+                        khoản</a>
                     <a href="index.php?act=viewcart" class="text-dark-emphasis"> <i
-                            class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a>
+                            class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
                 </div>
             </form>
         </div>

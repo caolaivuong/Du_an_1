@@ -109,7 +109,7 @@
                     với các chất liệu vải cao cấp. Những mẫu thiết kế mới này sẽ là lựa chọn lý tưởng cho mọi dịp lễ hội
                     và công sở.
                 </p>
-                <p class="date">Ngày đăng: 29/11/2024</p>
+                <p class="date">Ngày đăng: 05/12/2024</p>
                 <a href="#" class="read-more">Đọc thêm</a>
             </div>
         </div>
@@ -124,7 +124,7 @@
                     Mừng mùa lễ hội, cửa hàng của chúng tôi có các chương trình giảm giá lớn cho tất cả các sản phẩm từ
                     áo polo, quần jeans, đến phụ kiện thời trang. Đừng bỏ lỡ cơ hội tuyệt vời này!
                 </p>
-                <p class="date">Ngày đăng: 28/11/2024</p>
+                <p class="date">Ngày đăng: 05/12/2024</p>
                 <a href="#" class="read-more">Đọc thêm</a>
             </div>
         </div>
@@ -139,7 +139,7 @@
                     Chúng tôi cung cấp dịch vụ giao hàng miễn phí cho tất cả các đơn hàng từ 500.000 VNĐ trở lên. Chỉ
                     cần mua sắm thoải mái và để chúng tôi lo phần giao hàng cho bạn!
                 </p>
-                <p class="date">Ngày đăng: 27/11/2024</p>
+                <p class="date">Ngày đăng: 05/12/2024</p>
                 <a href="#" class="read-more">Đọc thêm</a>
             </div>
         </div>
