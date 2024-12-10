@@ -38,7 +38,10 @@
                                             <td>' . $countsp . '</td>
                                             <td>' . number_format($bill['total'], 0, ',', '.') . ' đ</td>
                                             <td>' . $ttdh . '</td>
-                                            <td><a href="' . $huydh . '" class="btn btn-danger" onclick="return confirmDelete()">Hủy đơn hàng</a></td>
+                                            <td>
+                                                <a href="index.php?act=vieworderdetails&id=' . $bill['id'] . '" class="btn btn-info">Xem chi tiết</a>
+                                                <a href="' . $huydh . '" class="btn btn-danger" onclick="return confirmDelete()">Hủy đơn hàng</a>
+                                            </td>
                                         </tr>';
                                     }
                                 }

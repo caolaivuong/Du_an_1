@@ -330,7 +330,19 @@ case 'delcart':
             }
             $listbill = loadall_bill();
             header('Location: index.php?act=ktdonhang');
-            break;    
+            break;   
+            
+            case 'vieworderdetails':
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $idbill = $_GET['id'];
+        $bill = loadone_bill($idbill);  // Lấy thông tin đơn hàng
+        $billct = loadall_cart($idbill);  // Lấy chi tiết các sản phẩm trong đơn hàng
+        include "view/cart/orderdetails.php";  // Hiển thị chi tiết đơn hàng
+    } else {
+        header('Location: index.php?act=ktdonhang');  // Nếu không có id đơn hàng, chuyển về trang quản lý đơn hàng
+    }
+    break;
+
         case 'ktdonhang':
             $listbill = loadall_bill_home($_SESSION['user']['id']);
             include "view/cart/mybill.php";
