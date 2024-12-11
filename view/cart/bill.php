@@ -1,3 +1,4 @@
+// người dùng nhập thông tin thanh toán
 <main class="">
     <div class="boxleft">
         <form action="index.php?act=billconfirm" method="post">

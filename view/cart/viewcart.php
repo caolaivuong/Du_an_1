@@ -1,3 +1,5 @@
+// hiển thị giỏ hàng của người dùng với các chức năng như thay đổi số lượng sản phẩm, xóa sản phẩm, thanh toán, và xóa
+toàn bộ giỏ hàng
 <style>
 /* Tổng thể */
 body {

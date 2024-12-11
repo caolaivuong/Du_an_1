@@ -1,3 +1,4 @@
+// thông tin của khách hàng sau khi hoàn tất thanh toán
 <main class="catalog mb ">
     <div class="boxleft">
         <?php

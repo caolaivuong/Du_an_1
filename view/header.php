@@ -365,7 +365,7 @@ body {
                         </li>
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=21">Áo Polo</a>
                         </li>
-                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=19">Quần
+                        <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=23">Quần
                                 Jeans</a></li>
                         <li><a class="dropdown-item text-dark-emphasis" href="index.php?act=sanpham&iddm=20">Váy Nữ</a>
                         </li>

@@ -1,3 +1,4 @@
+// các sản phẩm tương tự (cùng loại) với sản phẩm người dùng đang xem
 <style>
 a {
     text-decoration: none;
