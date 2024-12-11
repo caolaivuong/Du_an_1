@@ -2,11 +2,13 @@
 /* Nền và viền của thẻ select */
 #filterSelect {
     background-color: #f2f2f2;
-    border: none;
+    border: 1px solid #ccc;
     padding: 10px;
     font-size: 16px;
     width: 200px;
     border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 /* Tùy chỉnh kiểu mũi tên xuống */
@@ -25,75 +27,138 @@
     color: #555;
 }
 
-.col-4 {
-    padding: 0;
+/* Phần carousel */
+.carousel-inner img {
+    height: 550px;
+    /* Tăng chiều cao banner */
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Các mũi tên điều hướng */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 10px;
 }
 
-/* Nếu muốn mũi tên to hơn */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-size: 30px 30px;
-    /* Tăng kích thước mũi tên */
+/* Hiệu ứng hover cho mũi tên */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Dịch vụ info */
 .service-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 70px;
+    padding: 30px;
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    flex-direction: row-reverse;
-    /* Dịch các mục sang phải */
+    border-radius: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .service-item {
     display: flex;
     align-items: center;
-    flex: 1;
+    flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    flex: 1;
+    max-width: 200px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
     width: 60px;
-    /* Tăng kích thước ảnh */
     height: 60px;
-    /* Tăng kích thước ảnh */
-    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-icon:hover {
+    transform: scale(1.1);
 }
 
 .service-text h4 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.service-text h4:hover {
+    color: #007bff;
 }
 
 .service-text p {
     font-size: 12px;
     color: #777;
 }
+
+/* Nút bấm */
+.btn {
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #007bff);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #a71d2a, #dc3545);
+}
 </style>
 <div id="carouselExample" class="carousel slide">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://png.pngtree.com/template/20220330/ourmid/pngtree-yellow-background-autumn-and-winter-new-product-promotion-poster-banner-men-image_900086.jpg"
+                <img src="https://file.hstatic.net/1000369857/collection/1919_730_polo_3da01ded33614497a1884a3b99489661.jpg"
                     class="d-block w-100" width="200" height="500" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://intphcm.com/data/upload/banner-thoi-trang-dep.jpg" class="d-block w-100" width="200"
-                    height="500" alt="...">
+                <img src="https://pubcdn.ivymoda.com/files/news/2024/06/07/web-NGUYENGIA_3.jpg" class="d-block w-100"
+                    width="200" height="500" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://intphcm.com/data/upload/banner-thoi-trang-nam-dep.jpg" class="d-block w-100"
-                    width="200" height="500" alt="...">
+                <img src="https://tmluxury.vn/wp-content/uploads/shop-quan-jean-nam-quan-1-tm-luxury.jpg"
+                    class="d-block w-100" width="200" height="500" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -105,14 +170,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div> <br>
 </div><br>
 <div class="service-info">
