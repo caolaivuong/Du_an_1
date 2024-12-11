@@ -206,7 +206,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listbill = loadall_bill();
             include "bill/listbill.php";
             break;
-     
+       case 'vieworderdetails':
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $idbill = $_GET['id'];
+        $bill = loadone_bill($idbill);  // Lấy thông tin đơn hàng
+        $billct = loadall_cart($idbill);  // Lấy chi tiết các sản phẩm trong đơn hàng
+        include "bill/orderdetails.php";  // Hiển thị chi tiết đơn hàng
+    } else {
+        header('Location: index.php?act=ktdonhang');  // Nếu không có id đơn hàng, chuyển về trang quản lý đơn hàng
+    }
+    break;
 
         case 'thongke':
             $listthongke = loadall_thongke();
