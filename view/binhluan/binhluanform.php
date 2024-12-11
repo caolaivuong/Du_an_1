@@ -12,7 +12,7 @@ $dsbl = loadall_binhluan($idpro); // Lấy danh sách bình luận
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bình luận sản phẩm</title>
+    <title>Bình Luận Sản Phẩm</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
     h3 {
@@ -93,7 +93,7 @@ $dsbl = loadall_binhluan($idpro); // Lấy danh sách bình luận
                     </form>
                 </div>
                 <?php else: ?>
-                <h3>Đăng nhập để gửi bình luận!</h3>
+                <h3>Hãy đăng nhập để gửi bình luận!</h3>
                 <?php endif; ?>
 
                 <?php

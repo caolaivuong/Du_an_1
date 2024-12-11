@@ -168,7 +168,7 @@ body {
     <div class="text-center">
         <?php extract($sanpham); ?>
         <h3 class="badge text-bg-success text-wrap" style="width: 12rem;">
-            Chi tiết sản phẩm
+            Chi Tiết Sản Phẩm
         </h3>
     </div><br>
 
@@ -249,21 +249,18 @@ function plus(x) {
     var slcu = cha.previousSibling.previousSibling;
     var slmoi = parseInt(slcu.value) + 1;
     var idsp = cha.nextSibling.nextSibling.value;
-    if (slmoi < 11) {
-        slcu.value = slmoi;
-        $.post("/model/capnhatctsp.php", {
-                "idsp": idsp,
-                "slmoi": slmoi,
-            },
-            function(data) {
-                document.getElementById("ctsp").innerHTML = data;
-            }
-        ).fail(function(jqXHR, textStatus, errorThrown) {
-            console.log("AJAX request failed:", errorThrown);
-        });
-    } else {
-        alert("Không thể lớn hơn 10")
-    }
+
+    slcu.value = slmoi; // Không cần kiểm tra giới hạn số lượng nữa
+    $.post("/model/capnhatctsp.php", {
+            "idsp": idsp,
+            "slmoi": slmoi,
+        },
+        function(data) {
+            document.getElementById("ctsp").innerHTML = data;
+        }
+    ).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log("AJAX request failed:", errorThrown);
+    });
 }
 
 function minus(x) {
@@ -271,8 +268,9 @@ function minus(x) {
     var slcu = cha.nextSibling.nextSibling;
     var slmoi = parseInt(slcu.value) - 1;
     var idsp = cha.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.value;
+
     if (slmoi > 0) {
-        slcu.value = slmoi;
+        slcu.value = slmoi; // Không cần kiểm tra giới hạn số lượng nữa
         $.post("/model/capnhatctsp.php", {
                 "idsp": idsp,
                 "slmoi": slmoi,
@@ -284,7 +282,7 @@ function minus(x) {
             console.log("AJAX request failed:", errorThrown);
         });
     } else {
-        alert("Không thể nhỏ hơn 1")
+        alert("Không thể nhỏ hơn 1");
     }
 }
 </script>
