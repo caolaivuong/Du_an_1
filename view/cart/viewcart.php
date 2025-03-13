@@ -201,7 +201,7 @@ span.badge {
         } else {
             // Hiển thị thông báo lỗi nếu số lượng không hợp lệ
             const errorMessage = document.createElement('small');
-            errorMessage.classList.add('text-danger');
+            errorMessage.classList.add('text-danger');ư
             errorMessage.id = 'error-' + id;
             if (action === 'increase') {
                 errorMessage.innerText = 'Số lượng không thể tăng nữa!';

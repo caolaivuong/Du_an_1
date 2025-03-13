@@ -58,7 +58,7 @@ function loadone_sanpham($id)
     $sql = "select * from sanpham where id = $id";
     $result = pdo_query_one($sql);
     return $result;
-}
+} 
 function load_sanpham_cungloai($id, $iddm)
 {
     $sql = "select * from sanpham where iddm = $iddm and id <> $id";//<> là khác

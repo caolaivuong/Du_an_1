@@ -52,7 +52,7 @@ ul.list-unstyled li {
                     <?php foreach ($billct as $ct): ?>
                     <tr>
                         <td><?= $ct['name'] ?></td>
-                        <td><img src="images/<?= $ct['img'] ?>" alt="<?= $ct['name'] ?>" width="100" class="img-fluid">
+                        <td><img src="img/<?= $ct['img'] ?>" alt="<?= $ct['name'] ?>" width="100" class="img-fluid">
                         </td>
                         <td><?= number_format($ct['price'], 0, ',', '.') ?> VND</td>
                         <td><?= $ct['soluong'] ?></td>
